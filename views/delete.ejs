@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Audio File</title>
+</head>
+<body>
+    <h1>Delete Audio File</h1>
+    <p>Filename: <%= audio.filename %></p>
+    <p>Size: <%= audio.size %> bytes</p>
+    <form action="/delete/<%= audio._id %>" method="post">
+        <button type="submit">Delete</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

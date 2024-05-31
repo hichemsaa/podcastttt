@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <h1>Home</h1>
+        <ul>
+            <% audios.forEach((audio) => { %>
+                <li><%= audio.filename %> (<%= audio.size %> bytes) <audio controls><source src="/audio/<%= audio._id %>?filePath=<%= audio.path %>" type="audio/mpeg"></audio> <a href="/delete/<%= audio._id %>">Delete</a></li>
+            <% }); %>
+        </ul>
+        <a href="/upload">Upload audio file</a>
+</body>
+</html>
